@@ -247,6 +247,9 @@ if USE_S3:
     DEFAULT_FILE_STORAGE = env.str(
         "DEFAULT_FILE_STORAGE", "home.storage_backends.MediaStorage"
     )
+    AWS_S3_SIGNATURE_VERSION = 's3v4'
+
+
 
 SPECTACULAR_SETTINGS = {
     # available SwaggerUI configuration parameters
