@@ -21,71 +21,77 @@ const AccountScreen = () => {
     }
   }, []);
   return <View style={styles.container}>
-            <ScrollView>
-                <View style={styles.profileContainer}>
-                    <Image source={require("./assets/profilePicture.png")} style={styles.profilePicture} />
-                    <Text style={styles.profileName}>{userInfo?.username}</Text>
-                    <Text style={styles.profilemail}>{userInfo?.email}</Text>
-                </View>
+      <ScrollView>
+        <View style={styles.profileContainer}>
+          <Image source={require("./assets/profilePicture.png")} style={styles.profilePicture} />
+          <Text style={styles.profileName}>{userInfo?.username}</Text>
+          <Text style={styles.profilemail}>{userInfo?.email}</Text>
+        </View>
 
-                <View style={[styles.accountHeadings]}>
-                    <Text style={styles.inputText1}>Edit Account</Text>
-                    <Text style={[styles.inputText1, styles.FfQXMOLo]}>Delete Account</Text>
-                </View>
+        <View style={[styles.accountHeadings]}>
+          <Text style={styles.inputText1}>Edit Account</Text>
+          <Text style={[styles.inputText1, styles.FfQXMOLo]}>
+            Delete Account
+          </Text>
+        </View>
 
-                <View style={styles.inputs}>
-                    <View style={styles.inputContainer}>
-                        <Text style={styles.inputText}>First name</Text>
-                        <TextInput style={styles.input} onChangeText={text => setFirstName(text)} value={userInfo?.first_name} placeholder="Enter" placeholderTextColor="#000" autoCapitalize="none" autoCorrect={false} />
-
-                    </View>
-                    <View style={styles.inputContainer}>
-                        <Text style={styles.inputText}>Last Name</Text>
-                        <TextInput style={styles.input} onChangeText={text => setLastName(text)} value={userInfo?.last_name} placeholder="Enter" placeholderTextColor="#000" autoCapitalize="none" autoCorrect={false} />
-
-                    </View>
-                    <View style={styles.inputContainer}>
-                        <Text style={styles.inputText}>Address 1</Text>
-                        <TextInput style={styles.input} onChangeText={text => setUserAddress(text)} placeholder="Enter" placeholderTextColor="#000" autoCapitalize="none" autoCorrect={false} />
-                    </View>
-                </View>
-                <Text style={styles.connectAcc}>Connected accounts</Text>
-                <View style={styles.subHeader}>
-                    <View style={styles.mainContainer}>
-                        <Image // @ts-ignore
+        <View style={styles.inputs}>
+          <View style={styles.inputContainer}>
+            <Text style={styles.inputText}>First nameeee</Text>
+            <TextInput style={styles.input} onChangeText={text => setFirstName(text)} value={userInfo?.first_name} placeholder="Enter" placeholderTextColor="#000" autoCapitalize="none" autoCorrect={false} />
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.inputText}>Last Name</Text>
+            <TextInput style={styles.input} onChangeText={text => setLastName(text)} value={userInfo?.last_name} placeholder="Enter" placeholderTextColor="#000" autoCapitalize="none" autoCorrect={false} />
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.inputText}>Address 1</Text>
+            <TextInput style={styles.input} onChangeText={text => setUserAddress(text)} placeholder="Enter" placeholderTextColor="#000" autoCapitalize="none" autoCorrect={false} />
+          </View>
+        </View>
+        <Text style={styles.connectAcc}>Connected accounts</Text>
+        <View style={styles.subHeader}>
+          <View style={styles.mainContainer}>
+            <Image // @ts-ignore
           source={require("./assets/btnSigninwithApple.png")} style={styles.dot} />
-                        <View>
-                            <View style={styles.orderStatusContainer}>
-                                <Text style={styles.statusHeading}>Apple</Text>
-                                <Text style={[styles.statusHeading, styles.statusTime]}>Connected</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.mainContainer}>
-                        <Image // @ts-ignore
+            <View>
+              <View style={styles.orderStatusContainer}>
+                <Text style={styles.statusHeading}>Apple</Text>
+                <Text style={[styles.statusHeading, styles.statusTime]}>
+                  Connected
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={styles.mainContainer}>
+            <Image // @ts-ignore
           source={require("./assets/btnSigninwithGoogle.png")} style={styles.dot} />
-                        <View>
-                            <View style={styles.orderStatusContainer}>
-                                <Text style={styles.statusHeading}>Google</Text>
-                                <Text style={[styles.statusHeading, styles.statusTime]}>Connected</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={[styles.mainContainer, styles.borderNull]}>
-                        <Image // @ts-ignore
+            <View>
+              <View style={styles.orderStatusContainer}>
+                <Text style={styles.statusHeading}>Google</Text>
+                <Text style={[styles.statusHeading, styles.statusTime]}>
+                  Connected
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View style={[styles.mainContainer, styles.borderNull]}>
+            <Image // @ts-ignore
           source={require("./assets/btnSigninwithFacebook.png")} style={styles.dot} />
-                        <View>
-                            <View style={styles.orderStatusContainer}>
-                                <Text style={styles.statusHeading}>Facebook</Text>
-                                <Text style={[styles.statusHeading, styles.statusTime]}>Connected</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
+            <View>
+              <View style={styles.orderStatusContainer}>
+                <Text style={styles.statusHeading}>Facebook</Text>
+                <Text style={[styles.statusHeading, styles.statusTime]}>
+                  Connected
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
 
-                <Button buttonText={"Update"} />
-            </ScrollView>
-        </View>;
+        <Button buttonText={"Update"} />
+      </ScrollView>
+    </View>;
 };
 
 const styles = StyleSheet.create({
@@ -217,7 +223,7 @@ const styles = StyleSheet.create({
     color: "#2A2B2E"
   },
   statusTime: {
-    textAlign: 'right',
+    textAlign: "right",
     color: "#12D790",
     fontWeight: "bold"
   },
@@ -237,11 +243,11 @@ const Button = params => {
     color: params.outline ? "#000" : "#fff"
   };
   return <View style={buttonStyles.btnContainer}>
-            <Pressable style={[buttonStyles.btn, btnStyle]} onPress={params.onPress}>
-                <Text style={[buttonStyles.btnText, btnText]}>{params.buttonText}</Text>
-                <View style={buttonStyles.childrenContainer}>{params.children}</View>
-            </Pressable>
-        </View>;
+      <Pressable style={[buttonStyles.btn, btnStyle]} onPress={params.onPress}>
+        <Text style={[buttonStyles.btnText, btnText]}>{params.buttonText}</Text>
+        <View style={buttonStyles.childrenContainer}>{params.children}</View>
+      </Pressable>
+    </View>;
 };
 
 const buttonStyles = StyleSheet.create({
